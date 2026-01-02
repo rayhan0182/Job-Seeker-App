@@ -14,20 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginHorizontal="70dp"
-        app:lottie_rawRes="@raw/search"
+        app:lottie_rawRes="@raw/login"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/abeezee"
-        android:text="Login"
-        android:textColor="#044462"
-        android:textSize="18sp"
-        android:textStyle="bold"
-
-        />
 
 
     <com.google.android.material.textfield.TextInputLayout
