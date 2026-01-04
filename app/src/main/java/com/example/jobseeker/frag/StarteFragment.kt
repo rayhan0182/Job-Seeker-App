@@ -28,6 +28,13 @@ class StarteFragment : Fragment() {
 
         }
 
+
+        binding.signUp.setOnClickListener {
+
+            findNavController().navigate(R.id.action_starteFragment_to_registerFragment)
+
+        }
+
         return binding.root
     }
 

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.jobseeker.R
 import com.example.jobseeker.databinding.FragmentLoginBinding
 import com.example.jobseeker.model.Lmodel
@@ -16,40 +17,43 @@ import com.example.jobseeker.viewmod.Authviewmodel
 class LoginFragment : Fragment() {
 
     lateinit var binding: FragmentLoginBinding
-     val viewmod: Authviewmodel by viewModels()
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentLoginBinding.inflate(inflater,container,false)
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
 
-        binding.login.setOnClickListener {
 
-          binding.let {
+         logindatacreate()
 
-              val emaill = it.email.text.toString()
 
-              val passw = it.pass.text.toString()
+        return binding.root
+    }
 
-              if (emaill.isEmpty()&&passw.isEmpty()){
+    private fun logindatacreate() {
 
-                  Toast.makeText(context, "plz fillup all input box", Toast.LENGTH_LONG).show()
+        with(binding){
 
-              }else{
+            login.setOnClickListener {
 
-                  val user = Lmodel(emaill,passw,"")
+                val emaill = email.text.toString()
 
-                  viewmod.logincreate(user)
+                val pass = pass.text.toString()
 
-              }
-          }
+                val userlogin = Lmodel(emaill,pass)
+
+                
+
+
+
+            }
+
 
 
         }
 
 
-        return binding.root
+
     }
 
 
